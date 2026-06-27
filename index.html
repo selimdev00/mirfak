@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NETDEV</title>
+    <title>netdev - веб-разработка любой сложности</title>
+    <meta
+      name="description"
+      content="netdev - студия веб-разработки. Корпоративные сайты, интернет-магазины, веб-порталы и личные кабинеты под ключ. 10 инженеров, 8 лет на рынке, год технической поддержки в подарок."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="netdev - веб-разработка любой сложности" />
+    <meta
+      property="og:description"
+      content="Корпоративные сайты, интернет-магазины и веб-порталы под ключ. Чистый код, прозрачные сроки, год поддержки в подарок."
+    />
+    <meta property="og:image" content="./assets/favicon/icon-512.png" />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+    <meta name="theme-color" content="#0000fe" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.2.96/css/materialdesignicons.min.css"
@@ -24,93 +45,106 @@
     <link rel="stylesheet" href="./assets/styles/main.css" />
   </head>
   <body>
-    <header class="header__wrapper">
+    <a href="#main" class="skip-link">Перейти к содержимому</a>
+
+    <header class="header__wrapper" id="top">
       <div class="container">
         <div class="header">
-          <a class="header__logo" href="/"> </a>
+          <a class="header__logo" href="#top" aria-label="netdev - на главную"></a>
 
-          <nav class="header__nav__wrapper">
+          <nav class="header__nav__wrapper" aria-label="Основная навигация">
             <ul class="header__nav">
-              <li class="header__nav__item">
-                <a href="#">Главная</a>
-              </li>
-
-              <li class="header__nav__item">
-                <a href="#">Услуги</a>
-              </li>
-
-              <li class="header__nav__item">
-                <a href="#">Клиенты</a>
-              </li>
-
-              <li class="header__nav__item">
-                <a href="#">Отзывы</a>
-              </li>
-
-              <li class="header__nav__item">
-                <a href="#">Стоимость</a>
-              </li>
-
-              <li class="header__nav__item">
-                <a href="#">Контакты</a>
-              </li>
+              <li class="header__nav__item"><a href="#top">Главная</a></li>
+              <li class="header__nav__item"><a href="#services">Услуги</a></li>
+              <li class="header__nav__item"><a href="#clients">Клиенты</a></li>
+              <li class="header__nav__item"><a href="#reviews">Отзывы</a></li>
+              <li class="header__nav__item"><a href="#pricing">Стоимость</a></li>
+              <li class="header__nav__item"><a href="#contacts">Контакты</a></li>
             </ul>
           </nav>
 
           <div class="header__panel">
-            <button class="header__button">
+            <button class="header__button" type="button" data-modal-open>
               <span>Оставить заявку</span>
-
-              <i class="mdi mdi-chevron-right"></i>
+              <i class="mdi mdi-chevron-right" aria-hidden="true"></i>
             </button>
           </div>
+
+          <button
+            class="header__burger"
+            type="button"
+            aria-label="Открыть меню"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+          >
+            <span class="header__burger__bar"></span>
+            <span class="header__burger__bar"></span>
+            <span class="header__burger__bar"></span>
+          </button>
         </div>
       </div>
+
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Мобильная навигация" hidden>
+        <ul class="mobile-nav__list">
+          <li><a href="#top">Главная</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#clients">Клиенты</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#pricing">Стоимость</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+        <button class="button mobile-nav__cta" type="button" data-modal-open>
+          Оставить заявку
+        </button>
+      </nav>
     </header>
 
-    <main>
+    <main id="main">
       <section class="section__wrapper landing-section__wrapper">
         <div class="container">
           <div class="section landing-section">
-            <div class="landing-section__image">
-              <img src="assets/images/index/landing-image.png" alt="" />
+            <div class="landing-section__image" data-reveal>
+              <img
+                src="assets/images/index/landing-image.png"
+                alt="Команда netdev за работой над веб-проектом"
+                loading="eager"
+              />
             </div>
 
             <div class="landing-section__content">
-              <h1 class="landing-section__title">
-                Воплотите свое видение в жизнь с netdev
+              <h1 class="landing-section__title" data-reveal>
+                Воплотите свое видение в жизнь с <span>netdev</span>
               </h1>
 
-              <p class="landing-section__text">
-                Мы специализируемся на создании решений с чистым кодом, которые
-                воплощают ваше видение в жизнь. Имея 10 опытных разработчиков и
-                5 лет опыта работы на рынке, вы можете быть уверены, что ваш
+              <p class="landing-section__text" data-reveal>
+                Мы создаем сайты и веб-сервисы с чистым кодом, которые решают
+                задачи бизнеса. 10 инженеров и дизайнеров, 8 лет на рынке - ваш
                 проект в надежных руках.
               </p>
 
               <section
                 class="splide landing-section__slider"
-                aria-label="Splide Basic HTML Example"
+                aria-label="Что мы делаем"
+                data-reveal
               >
                 <div class="splide__track">
                   <ul class="splide__list">
                     <li class="splide__slide landing-section__slider__item">
                       <h2 class="landing-section__slider__item__title">
-                        Веб-порталы, сайты и дизайн любой сложности
+                        Сайты и порталы любой сложности
                       </h2>
-
                       <p class="landing-section__slider__item__text">
-                        Ваш бизнес станет сильнее 1 год технической поддержки
+                        От лендинга до веб-портала. Год технической поддержки в
+                        подарок.
                       </p>
                     </li>
 
                     <li class="splide__slide landing-section__slider__item">
                       <h2 class="landing-section__slider__item__title">
-                        Веб-порталы, сайты и дизайн любой сложности
+                        Дизайн, который продает
                       </h2>
-
                       <p class="landing-section__slider__item__text">
-                        Ваш бизнес станет сильнее 1 год технической поддержки
+                        UX/UI и брендинг, выстроенные вокруг ваших бизнес-целей.
                       </p>
                     </li>
                   </ul>
@@ -119,13 +153,13 @@
                 <div class="splide__arrows landing-section__slider__arrows">
                   <button
                     class="splide__arrow splide__arrow--prev landing-section__slider__arrow landing-section__slider__arrow--prev"
+                    type="button"
+                    aria-label="Предыдущий слайд"
                   >
-                    <i class="mdi mdi-chevron-left"></i>
+                    <i class="mdi mdi-chevron-left" aria-hidden="true"></i>
                   </button>
 
-                  <div
-                    class="slider__pagination landing-section__slider__pagination"
-                  >
+                  <div class="slider__pagination landing-section__slider__pagination">
                     <span class="current"></span>
                     <span>/</span>
                     <span class="total"></span>
@@ -133,8 +167,10 @@
 
                   <button
                     class="splide__arrow splide__arrow--next landing-section__slider__arrow landing-section__slider__arrow--next"
+                    type="button"
+                    aria-label="Следующий слайд"
                   >
-                    <i class="mdi mdi-chevron-right"></i>
+                    <i class="mdi mdi-chevron-right" aria-hidden="true"></i>
                   </button>
                 </div>
               </section>
@@ -143,179 +179,151 @@
         </div>
       </section>
 
-      <section class="section__wrapper services-section__wrapper">
+      <section class="section__wrapper services-section__wrapper" id="services">
         <div class="container">
           <div class="section services-section">
             <div class="services-section__content">
-              <h1 class="section__title">Услуги <span>NetDEV</span></h1>
+              <h2 class="section__title" data-reveal>Услуги <span>netdev</span></h2>
 
-              <p class="section__text">
-                Агентство Digital Qala предоставляет широкий спектр услуг: от
-                дизайна до разработки, а также сопровождения сайта.
+              <p class="section__text" data-reveal>
+                Полный цикл: от исследования и дизайна до разработки,
+                сопровождения и развития. Берем проект под ключ и отвечаем за
+                результат.
               </p>
 
-              <button class="services-section__button">
+              <button
+                class="services-section__button"
+                type="button"
+                data-modal-open
+                data-reveal
+              >
                 <span>Заказать</span>
               </button>
             </div>
 
             <ul class="services-section__list">
-              <li class="services-section__list__item">
-                <div class="services-section__list__item__title">
-                  <h2>Веб-портал, созданный Digital Qala приносит прибыль</h2>
-
-                  <div class="services-section__list__item__title__icon">
+              <li class="services-section__list__item is-active" data-reveal>
+                <button
+                  class="services-section__list__item__title"
+                  type="button"
+                  aria-expanded="true"
+                  aria-controls="service-panel-1"
+                >
+                  <h3>Корпоративные сайты</h3>
+                  <span class="services-section__list__item__title__icon" aria-hidden="true">
                     <i class="mdi mdi-arrow-right"></i>
-                  </div>
-                </div>
-                <div class="services-section__list__item__content">
-                  <ul>
-                    <li>Команда экспертов к вашим услугам</li>
-                    <li>
-                      Наша команда из 10 профессионалов готова помочь вам на
-                      каждом этапе пути.
-                    </li>
-                    <li>
-                      От концепции до реализации, мы здесь, чтобы гарантировать,
-                      что ваш проект будет реализован вовремя и в рамках
-                      бюджета.
-                    </li>
+                  </span>
+                </button>
+                <div class="services-section__list__item__content" id="service-panel-1">
+                  <ul class="list">
+                    <li>Понятная структура и сильный первый экран.</li>
+                    <li>Адаптив под любые устройства и быстрая загрузка.</li>
+                    <li>CMS, в которой удобно вести контент без разработчика.</li>
                   </ul>
                 </div>
               </li>
 
-              <li class="services-section__list__item">
-                <div class="services-section__list__item__title">
-                  <h2>Веб-портал, созданный Digital Qala приносит прибыль</h2>
-
-                  <div class="services-section__list__item__title__icon">
+              <li class="services-section__list__item" data-reveal>
+                <button
+                  class="services-section__list__item__title"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="service-panel-2"
+                >
+                  <h3>Лендинги и промо-страницы</h3>
+                  <span class="services-section__list__item__title__icon" aria-hidden="true">
                     <i class="mdi mdi-arrow-right"></i>
-                  </div>
-                </div>
-
-                <div class="services-section__list__item__content">
-                  <ul>
-                    <li>Команда экспертов к вашим услугам</li>
-                    <li>
-                      Наша команда из 10 профессионалов готова помочь вам на
-                      каждом этапе пути.
-                    </li>
-                    <li>
-                      От концепции до реализации, мы здесь, чтобы гарантировать,
-                      что ваш проект будет реализован вовремя и в рамках
-                      бюджета.
-                    </li>
+                  </span>
+                </button>
+                <div class="services-section__list__item__content" id="service-panel-2">
+                  <ul class="list">
+                    <li>Страницы под рекламные кампании и запуски продуктов.</li>
+                    <li>Акцент на конверсию: офер, доверие, целевое действие.</li>
+                    <li>A/B-готовая верстка и аналитика из коробки.</li>
                   </ul>
                 </div>
               </li>
 
-              <li class="services-section__list__item">
-                <div class="services-section__list__item__title">
-                  <h2>Веб-портал, созданный Digital Qala приносит прибыль</h2>
-
-                  <div class="services-section__list__item__title__icon">
+              <li class="services-section__list__item" data-reveal>
+                <button
+                  class="services-section__list__item__title"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="service-panel-3"
+                >
+                  <h3>Интернет-магазины</h3>
+                  <span class="services-section__list__item__title__icon" aria-hidden="true">
                     <i class="mdi mdi-arrow-right"></i>
-                  </div>
-                </div>
-
-                <div class="services-section__list__item__content">
-                  <ul>
-                    <li>
-                      Дизайн веб-порталов и логотип от Digital Qala выделит
-                      индивидуальность вашей компании
-                    </li>
-                    <li>
-                      Наша команда из 10 профессионалов готова помочь вам на
-                      каждом этапе пути.
-                    </li>
-                    <li>
-                      От концепции до реализации, мы здесь, чтобы гарантировать,
-                      что ваш проект будет реализован вовремя и в рамках
-                      бюджета.
-                    </li>
+                  </span>
+                </button>
+                <div class="services-section__list__item__content" id="service-panel-3">
+                  <ul class="list">
+                    <li>Каталог, корзина и оформление без лишних шагов.</li>
+                    <li>Интеграции с оплатой, доставкой и 1С.</li>
+                    <li>Готовность к нагрузке и росту ассортимента.</li>
                   </ul>
                 </div>
               </li>
 
-              <li class="services-section__list__item">
-                <div class="services-section__list__item__title">
-                  <h2>Веб-портал, созданный Digital Qala приносит прибыль</h2>
-
-                  <div class="services-section__list__item__title__icon">
+              <li class="services-section__list__item" data-reveal>
+                <button
+                  class="services-section__list__item__title"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="service-panel-4"
+                >
+                  <h3>Веб-порталы и личные кабинеты</h3>
+                  <span class="services-section__list__item__title__icon" aria-hidden="true">
                     <i class="mdi mdi-arrow-right"></i>
-                  </div>
-                </div>
-                <div class="services-section__list__item__content">
-                  <ul>
-                    <li>
-                      Дизайн веб-порталов и логотип от Digital Qala выделит
-                      индивидуальность вашей компании
-                    </li>
-                    <li>
-                      Наша команда из 10 профессионалов готова помочь вам на
-                      каждом этапе пути.
-                    </li>
-                    <li>
-                      От концепции до реализации, мы здесь, чтобы гарантировать,
-                      что ваш проект будет реализован вовремя и в рамках
-                      бюджета.
-                    </li>
+                  </span>
+                </button>
+                <div class="services-section__list__item__content" id="service-panel-4">
+                  <ul class="list">
+                    <li>Сложная логика, роли и права доступа.</li>
+                    <li>API, дашборды и автоматизация рутинных процессов.</li>
+                    <li>Архитектура, которую не страшно развивать годами.</li>
                   </ul>
                 </div>
               </li>
 
-              <li class="services-section__list__item">
-                <div class="services-section__list__item__title">
-                  <h2>Веб-портал, созданный Digital Qala приносит прибыль</h2>
-
-                  <div class="services-section__list__item__title__icon">
+              <li class="services-section__list__item" data-reveal>
+                <button
+                  class="services-section__list__item__title"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="service-panel-5"
+                >
+                  <h3>UX/UI-дизайн и брендинг</h3>
+                  <span class="services-section__list__item__title__icon" aria-hidden="true">
                     <i class="mdi mdi-arrow-right"></i>
-                  </div>
-                </div>
-
-                <div class="services-section__list__item__content">
-                  <ul>
-                    <li>
-                      Дизайн веб-порталов и логотип от Digital Qala выделит
-                      индивидуальность вашей компании
-                    </li>
-                    <li>
-                      Наша команда из 10 профессионалов готова помочь вам на
-                      каждом этапе пути.
-                    </li>
-                    <li>
-                      От концепции до реализации, мы здесь, чтобы гарантировать,
-                      что ваш проект будет реализован вовремя и в рамках
-                      бюджета.
-                    </li>
+                  </span>
+                </button>
+                <div class="services-section__list__item__content" id="service-panel-5">
+                  <ul class="list">
+                    <li>Исследование, прототипы и продуманные сценарии.</li>
+                    <li>Айдентика и дизайн-система для единого стиля.</li>
+                    <li>Интерфейсы, в которых приятно и понятно работать.</li>
                   </ul>
                 </div>
               </li>
 
-              <li class="services-section__list__item">
-                <div class="services-section__list__item__title">
-                  <h2>Веб-портал, созданный Digital Qala приносит прибыль</h2>
-
-                  <div class="services-section__list__item__title__icon">
+              <li class="services-section__list__item" data-reveal>
+                <button
+                  class="services-section__list__item__title"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="service-panel-6"
+                >
+                  <h3>Поддержка и развитие</h3>
+                  <span class="services-section__list__item__title__icon" aria-hidden="true">
                     <i class="mdi mdi-arrow-right"></i>
-                  </div>
-                </div>
-
-                <div class="services-section__list__item__content">
-                  <ul>
-                    <li>
-                      Дизайн веб-порталов и логотип от Digital Qala выделит
-                      индивидуальность вашей компании
-                    </li>
-                    <li>
-                      Наша команда из 10 профессионалов готова помочь вам на
-                      каждом этапе пути.
-                    </li>
-                    <li>
-                      От концепции до реализации, мы здесь, чтобы гарантировать,
-                      что ваш проект будет реализован вовремя и в рамках
-                      бюджета.
-                    </li>
+                  </span>
+                </button>
+                <div class="services-section__list__item__content" id="service-panel-6">
+                  <ul class="list">
+                    <li>Год технической поддержки в подарок к каждому проекту.</li>
+                    <li>Мониторинг, обновления и быстрая реакция на запросы.</li>
+                    <li>Планомерное развитие продукта по дорожной карте.</li>
                   </ul>
                 </div>
               </li>
@@ -324,13 +332,51 @@
         </div>
       </section>
 
+      <section class="section__wrapper clients-section__wrapper" id="clients">
+        <div class="container">
+          <h2 class="section__title clients-section__title" data-reveal>
+            Нам <span>доверяют</span>
+          </h2>
+
+          <div class="clients-section">
+            <ul class="clients-section__stats">
+              <li class="clients-section__stats__item" data-reveal>
+                <span class="clients-section__stats__item__value">80+</span>
+                <span class="clients-section__stats__item__label">запущенных проектов</span>
+              </li>
+              <li class="clients-section__stats__item" data-reveal>
+                <span class="clients-section__stats__item__value">8 лет</span>
+                <span class="clients-section__stats__item__label">на рынке разработки</span>
+              </li>
+              <li class="clients-section__stats__item" data-reveal>
+                <span class="clients-section__stats__item__value">10</span>
+                <span class="clients-section__stats__item__label">инженеров и дизайнеров</span>
+              </li>
+              <li class="clients-section__stats__item" data-reveal>
+                <span class="clients-section__stats__item__value">1 год</span>
+                <span class="clients-section__stats__item__label">поддержки в подарок</span>
+              </li>
+            </ul>
+
+            <ul class="clients-section__logos" aria-label="Клиенты студии">
+              <li class="clients-section__logos__item" data-reveal>Tumar Retail</li>
+              <li class="clients-section__logos__item" data-reveal>Bereke Logistics</li>
+              <li class="clients-section__logos__item" data-reveal>Caspian Digital</li>
+              <li class="clients-section__logos__item" data-reveal>Altyn Group</li>
+              <li class="clients-section__logos__item" data-reveal>Dostyk Med</li>
+              <li class="clients-section__logos__item" data-reveal>Samruk Tech</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section class="section__wrapper transparency-section__wrapper">
         <div class="container">
-          <h1 class="section__title transparency-section__title">
+          <h2 class="section__title transparency-section__title" data-reveal>
             Надежность и <span class="transparent">прозрачность</span>
-          </h1>
+          </h2>
           <div class="section transparency-section">
-            <div class="transparency-section__image">
+            <div class="transparency-section__image" data-reveal>
               <img
                 src="assets/images/index/transparency-section-image.png"
                 alt=""
@@ -338,15 +384,11 @@
             </div>
 
             <div class="transparency-section__content">
-              <div class="transparency-section__content__item">
-                <span class="transparency-section__content__item__number"
-                  >[01]</span
-                >
-
+              <div class="transparency-section__content__item" data-reveal>
+                <span class="transparency-section__content__item__number">[01]</span>
                 <h3 class="transparency-section__content__item__title">
                   Вовлеченность в проект
                 </h3>
-
                 <p class="transparency-section__content__item__text">
                   Команда заинтересована в развитии вашего проекта, а не в
                   отработке часов. Мы любим нашу работу и с особым вниманием
@@ -354,32 +396,25 @@
                 </p>
               </div>
 
-              <div class="transparency-section__content__item">
-                <span class="transparency-section__content__item__number"
-                  >[02]</span
-                >
-
+              <div class="transparency-section__content__item" data-reveal>
+                <span class="transparency-section__content__item__number">[02]</span>
                 <h3 class="transparency-section__content__item__title">
                   Соблюдение договора NDA
                 </h3>
-
                 <p class="transparency-section__content__item__text">
                   Ваши данные надежно защищены. Вся информация сохраняется в
                   рамках нашей команды.
                 </p>
               </div>
 
-              <div class="transparency-section__content__item">
-                <span class="transparency-section__content__item__number"
-                  >[03]</span
-                >
-
+              <div class="transparency-section__content__item" data-reveal>
+                <span class="transparency-section__content__item__number">[03]</span>
                 <h3 class="transparency-section__content__item__title">
                   Мы ценим ваше время
                 </h3>
-
                 <p class="transparency-section__content__item__text">
-                  Срок работы над проектом от 3 дней до 1 месяца.
+                  Срок работы над проектом от 3 дней до 1 месяца. Сроки и этапы
+                  фиксируем на старте.
                 </p>
               </div>
             </div>
@@ -387,255 +422,228 @@
         </div>
       </section>
 
-      <section class="section__wrapper portfolio-section__wrapper">
+      <section class="section__wrapper portfolio-section__wrapper" id="portfolio">
         <div class="container">
-          <h1 class="section__title">Портфолио</h1>
+          <h2 class="section__title" data-reveal>Портфолио</h2>
 
           <div class="section portfolio-section">
             <div class="portfolio-section__grid">
-              <div class="portfolio-section__grid__item">
+              <article class="portfolio-section__grid__item" data-reveal>
                 <div class="portfolio-section__grid__item__image">
-                  <img src="assets/images/index/works/work-1.png" alt="" />
+                  <img
+                    src="assets/images/portfolio-main/case-1.png"
+                    alt="Корпоративный портал для логистической компании"
+                  />
                 </div>
-
                 <div class="portfolio-section__grid__item__tags">
-                  <div class="portfolio-section__grid__item__tags__item">
-                    веб-портал
-                  </div>
-                  <div class="portfolio-section__grid__item__tags__item">
-                    веб-портал
-                  </div>
+                  <span class="portfolio-section__grid__item__tags__item">веб-портал</span>
+                  <span class="portfolio-section__grid__item__tags__item">личный кабинет</span>
                 </div>
-
                 <div class="portfolio-section__grid__item__content">
                   <h3 class="portfolio-section__grid__item__content__title">
-                    Title: Egestas ultrices lectus rhoncus curabitur tristique
+                    Портал для логистической компании
                   </h3>
                 </div>
-              </div>
+              </article>
 
-              <div class="portfolio-section__grid__item">
+              <article class="portfolio-section__grid__item" data-reveal>
                 <div class="portfolio-section__grid__item__image">
-                  <img src="assets/images/index/works/work-1.png" alt="" />
+                  <img
+                    src="assets/images/portfolio-main/landing.png"
+                    alt="Интернет-магазин товаров для дома"
+                  />
                 </div>
-
                 <div class="portfolio-section__grid__item__tags">
-                  <div class="portfolio-section__grid__item__tags__item">
-                    веб-портал
-                  </div>
-                  <div class="portfolio-section__grid__item__tags__item">
-                    веб-портал
-                  </div>
+                  <span class="portfolio-section__grid__item__tags__item">e-commerce</span>
+                  <span class="portfolio-section__grid__item__tags__item">дизайн</span>
                 </div>
-
                 <div class="portfolio-section__grid__item__content">
                   <h3 class="portfolio-section__grid__item__content__title">
-                    Title: Egestas ultrices lectus rhoncus curabitur tristique
+                    Интернет-магазин товаров для дома
                   </h3>
                 </div>
-              </div>
+              </article>
 
-              <div class="portfolio-section__grid__item">
+              <article class="portfolio-section__grid__item" data-reveal>
                 <div class="portfolio-section__grid__item__image">
-                  <img src="assets/images/index/works/work-1.png" alt="" />
+                  <img
+                    src="assets/images/index/about-image.jpg"
+                    alt="Лендинг для финтех-стартапа"
+                  />
                 </div>
-
                 <div class="portfolio-section__grid__item__tags">
-                  <div class="portfolio-section__grid__item__tags__item">
-                    веб-портал
-                  </div>
-                  <div class="portfolio-section__grid__item__tags__item">
-                    веб-портал
-                  </div>
+                  <span class="portfolio-section__grid__item__tags__item">лендинг</span>
+                  <span class="portfolio-section__grid__item__tags__item">анимация</span>
                 </div>
-
                 <div class="portfolio-section__grid__item__content">
                   <h3 class="portfolio-section__grid__item__content__title">
-                    Title: Egestas ultrices lectus rhoncus curabitur tristique
+                    Лендинг для финтех-стартапа
                   </h3>
                 </div>
-              </div>
+              </article>
 
-              <div class="portfolio-section__grid__item">
+              <article class="portfolio-section__grid__item" data-reveal>
                 <div class="portfolio-section__grid__item__image">
-                  <img src="assets/images/index/works/work-1.png" alt="" />
+                  <img
+                    src="assets/images/portfolio-default/checkout-project-image.jpg"
+                    alt="Сайт сети медицинских центров"
+                  />
                 </div>
-
                 <div class="portfolio-section__grid__item__tags">
-                  <div class="portfolio-section__grid__item__tags__item">
-                    веб-портал
-                  </div>
-                  <div class="portfolio-section__grid__item__tags__item">
-                    веб-портал
-                  </div>
+                  <span class="portfolio-section__grid__item__tags__item">корпоративный сайт</span>
+                  <span class="portfolio-section__grid__item__tags__item">SEO</span>
                 </div>
-
                 <div class="portfolio-section__grid__item__content">
                   <h3 class="portfolio-section__grid__item__content__title">
-                    Title: Egestas ultrices lectus rhoncus curabitur tristique
+                    Сайт сети медицинских центров
                   </h3>
                 </div>
-              </div>
+              </article>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section__wrapper talk-section__wrapper">
+      <section class="section__wrapper pricing-section__wrapper" id="pricing">
         <div class="container">
-          <h1 class="section__title talk-section__title">о нас говорят</h1>
-          <div class="talk-section__slider__wrapper">
+          <h2 class="section__title pricing-section__title" data-reveal>
+            Стоимость <span>работ</span>
+          </h2>
+          <p class="section__text pricing-section__lead" data-reveal>
+            Ориентиры по бюджету. Точную смету и сроки фиксируем после короткого
+            брифа - бесплатно и без обязательств.
+          </p>
+
+          <div class="pricing-section">
+            <article class="pricing-card" data-reveal>
+              <h3 class="pricing-card__name">Лендинг</h3>
+              <p class="pricing-card__price">от 250 000 ₸</p>
+              <p class="pricing-card__term">срок 5-7 дней</p>
+              <ul class="list pricing-card__list">
+                <li>Одна страница с акцентом на конверсию</li>
+                <li>Адаптивная верстка и аналитика</li>
+                <li>Подключение форм и уведомлений</li>
+              </ul>
+              <button class="button pricing-card__button" type="button" data-modal-open>
+                Обсудить проект
+              </button>
+            </article>
+
+            <article class="pricing-card pricing-card--featured" data-reveal>
+              <span class="pricing-card__badge">Популярное</span>
+              <h3 class="pricing-card__name">Корпоративный сайт</h3>
+              <p class="pricing-card__price">от 700 000 ₸</p>
+              <p class="pricing-card__term">срок 2-3 недели</p>
+              <ul class="list pricing-card__list">
+                <li>До 10 страниц и удобная CMS</li>
+                <li>Индивидуальный дизайн под бренд</li>
+                <li>Базовое SEO и интеграции</li>
+                <li>Год технической поддержки</li>
+              </ul>
+              <button class="button pricing-card__button" type="button" data-modal-open>
+                Обсудить проект
+              </button>
+            </article>
+
+            <article class="pricing-card" data-reveal>
+              <h3 class="pricing-card__name">Веб-портал</h3>
+              <p class="pricing-card__price">от 1 500 000 ₸</p>
+              <p class="pricing-card__term">срок от 1 месяца</p>
+              <ul class="list pricing-card__list">
+                <li>Личные кабинеты и роли доступа</li>
+                <li>API, дашборды и автоматизация</li>
+                <li>Масштабируемая архитектура</li>
+              </ul>
+              <button class="button pricing-card__button" type="button" data-modal-open>
+                Обсудить проект
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section__wrapper talk-section__wrapper" id="reviews">
+        <div class="container">
+          <h2 class="section__title talk-section__title" data-reveal>о нас говорят</h2>
+          <div class="talk-section__slider__wrapper" data-reveal>
             <section
               class="splide talk-section__slider"
-              aria-label="Splide Basic HTML Example"
+              aria-label="Отзывы клиентов"
             >
               <div class="splide__track">
                 <ul class="splide__list">
                   <li class="splide__slide talk-section__slider__item">
-                    <div class="section talk-section">
+                    <figure class="section talk-section">
                       <div class="talk-section__sponsor-image">
-                        <img
-                          src="http://netdev.kz/storage/app/uploads/public/642/e8e/d74/642e8ed7478d9507344321.png"
-                          alt=""
-                        />
+                        <img src="assets/images/index/talk/sponsor.png" alt="Логотип Tumar Retail" />
                       </div>
 
-                      <div class="talk-section__content">
-                        <p class="talk-section__content__text--small">
-                          Risus, consequat cursus accumsan id leo nunc.
-                        </p>
-
-                        <p class="talk-section__content__text--small">
-                          A et scelerisque sed gravida netus ultrices elementum.
-                        </p>
-
+                      <blockquote class="talk-section__content">
                         <p class="talk-section__content__text">
-                          Risus, consequat cursus accumsan id leo nunc. A et
-                          scelerisque sed gravida netus ultrices elementum.
-                          Risus, consequat cursus accumsan id leo nunc. A et
-                          scelerisque sed gravida netus ultrices
-                          elementum.Risus, consequat cursus accumsan id leo
-                          nunc. A et scelerisque sed gravida netus ultrices
-                          elementum.
+                          netdev собрали нам новый сайт и личный кабинет за три
+                          недели. Заявок стало заметно больше, а вести контент
+                          теперь может сам маркетинг - без правок через
+                          разработчика.
                         </p>
-
-                        <div class="talk-section__content__socials">
-                          <div class="talk-section__content__socials__item">
-                            <a
-                              href="#"
-                              class="talk-section__content__socials__item__icon"
-                            >
-                              <i class="mdi mdi-facebook"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
+                        <figcaption class="talk-section__content__author">
+                          <span class="talk-section__content__author__name">Айгерим Сапарова</span>
+                          <span class="talk-section__content__author__role">маркетинг-директор, Tumar Retail</span>
+                        </figcaption>
+                      </blockquote>
 
                       <div class="talk-section__content__document">
-                        <img
-                          src="http://netdev.kz/storage/app/uploads/public/642/fea/82d/642fea82d4110688906180.png"
-                          alt=""
-                        />
+                        <img src="assets/images/index/talk/document.png" alt="" />
                       </div>
-                    </div>
+                    </figure>
                   </li>
 
                   <li class="splide__slide talk-section__slider__item">
-                    <div class="section talk-section">
+                    <figure class="section talk-section">
                       <div class="talk-section__sponsor-image">
-                        <img
-                          src="assets/images/index/talk/sponsor.png"
-                          alt=""
-                        />
+                        <img src="assets/images/index/talk/sponsor.png" alt="Логотип Bereke Logistics" />
                       </div>
 
-                      <div class="talk-section__content">
-                        <p class="talk-section__content__text--small">
-                          Risus, consequat cursus accumsan id leo nunc.
-                        </p>
-
-                        <p class="talk-section__content__text--small">
-                          A et scelerisque sed gravida netus ultrices elementum.
-                        </p>
-
+                      <blockquote class="talk-section__content">
                         <p class="talk-section__content__text">
-                          Risus, consequat cursus accumsan id leo nunc. A et
-                          scelerisque sed gravida netus ultrices elementum.
-                          Risus, consequat cursus accumsan id leo nunc. A et
-                          scelerisque sed gravida netus ultrices
-                          elementum.Risus, consequat cursus accumsan id leo
-                          nunc. A et scelerisque sed gravida netus ultrices
-                          elementum.
+                          Нам нужен был портал с ролями и интеграциями - команда
+                          разобралась в нашей логистике и предложила решение
+                          лучше, чем мы планировали. Поддержка отвечает быстро и
+                          по делу.
                         </p>
-
-                        <div class="talk-section__content__socials">
-                          <div class="talk-section__content__socials__item">
-                            <a
-                              href="#"
-                              class="talk-section__content__socials__item__icon"
-                            >
-                              <i class="mdi mdi-facebook"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
+                        <figcaption class="talk-section__content__author">
+                          <span class="talk-section__content__author__name">Данияр Ахметов</span>
+                          <span class="talk-section__content__author__role">основатель, Bereke Logistics</span>
+                        </figcaption>
+                      </blockquote>
 
                       <div class="talk-section__content__document">
-                        <img
-                          src="assets/images/index/talk/document.png"
-                          alt=""
-                        />
+                        <img src="assets/images/index/talk/document.png" alt="" />
                       </div>
-                    </div>
+                    </figure>
                   </li>
 
                   <li class="splide__slide talk-section__slider__item">
-                    <div class="section talk-section">
+                    <figure class="section talk-section">
                       <div class="talk-section__sponsor-image">
-                        <img
-                          src="assets/images/index/talk/sponsor.png"
-                          alt=""
-                        />
+                        <img src="assets/images/index/talk/sponsor.png" alt="Логотип Caspian Digital" />
                       </div>
 
-                      <div class="talk-section__content">
-                        <p class="talk-section__content__text--small">
-                          Risus, consequat cursus accumsan id leo nunc.
-                        </p>
-
-                        <p class="talk-section__content__text--small">
-                          A et scelerisque sed gravida netus ultrices elementum.
-                        </p>
-
+                      <blockquote class="talk-section__content">
                         <p class="talk-section__content__text">
-                          Risus, consequat cursus accumsan id leo nunc. A et
-                          scelerisque sed gravida netus ultrices elementum.
-                          Risus, consequat cursus accumsan id leo nunc. A et
-                          scelerisque sed gravida netus ultrices
-                          elementum.Risus, consequat cursus accumsan id leo
-                          nunc. A et scelerisque sed gravida netus ultrices
-                          elementum.
+                          Работали по спринтам, каждую неделю показывали
+                          результат. Сроки и бюджет сошлись с тем, что обещали на
+                          старте. Это редкость, и за это отдельное спасибо.
                         </p>
-
-                        <div class="talk-section__content__socials">
-                          <div class="talk-section__content__socials__item">
-                            <a
-                              href="#"
-                              class="talk-section__content__socials__item__icon"
-                            >
-                              <i class="mdi mdi-facebook"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
+                        <figcaption class="talk-section__content__author">
+                          <span class="talk-section__content__author__name">Елена Ким</span>
+                          <span class="talk-section__content__author__role">продакт-менеджер, Caspian Digital</span>
+                        </figcaption>
+                      </blockquote>
 
                       <div class="talk-section__content__document">
-                        <img
-                          src="assets/images/index/talk/document.png"
-                          alt=""
-                        />
+                        <img src="assets/images/index/talk/document.png" alt="" />
                       </div>
-                    </div>
+                    </figure>
                   </li>
                 </ul>
               </div>
@@ -643,22 +651,24 @@
               <div class="splide__arrows talk-section__slider__arrows">
                 <button
                   class="splide__arrow splide__arrow--prev talk-section__slider__arrow talk-section__slider__arrow--prev"
+                  type="button"
+                  aria-label="Предыдущий отзыв"
                 >
-                  <i class="mdi mdi-chevron-left"></i>
+                  <i class="mdi mdi-chevron-left" aria-hidden="true"></i>
                 </button>
 
-                <div
-                  class="slider__pagination talk-section__slider__pagination"
-                >
+                <div class="slider__pagination talk-section__slider__pagination">
                   <span class="current"></span>
                   <span>/</span>
-                  <span class="total">2</span>
+                  <span class="total"></span>
                 </div>
 
                 <button
                   class="splide__arrow splide__arrow--next talk-section__slider__arrow talk-section__slider__arrow--next"
+                  type="button"
+                  aria-label="Следующий отзыв"
                 >
-                  <i class="mdi mdi-chevron-right"></i>
+                  <i class="mdi mdi-chevron-right" aria-hidden="true"></i>
                 </button>
               </div>
             </section>
@@ -666,24 +676,24 @@
         </div>
       </section>
 
-      <section class="section__wrapper contact-section__wrapper">
+      <section class="section__wrapper contact-section__wrapper" id="contacts">
         <div class="container">
           <div class="section contact-section">
             <div class="contact-section__item">
               <div class="contact-section__item__block">
                 <h2 class="contact-section__item__title">контакты</h2>
                 <p class="contact-section__item__text">
-                  Адрес: Республика Казахстан, г. Алматы, ул. Кунаева 181 Б
+                  Республика Казахстан, г. Алматы, ул. Кунаева 181 Б
                 </p>
               </div>
 
               <div class="contact-section__item__block right">
-                <h2 class="contact-section__item__title">
-                  <a href="#">hello@netdev.kz</a>
-                </h2>
-                <h2 class="contact-section__item__title">
-                  <a href="#">+7 (727) 3231333</a>
-                </h2>
+                <p class="contact-section__item__line">
+                  <a href="mailto:hello@netdev.kz">hello@netdev.kz</a>
+                </p>
+                <p class="contact-section__item__line">
+                  <a href="tel:+77273231333">+7 (727) 323 13 33</a>
+                </p>
               </div>
             </div>
 
@@ -693,17 +703,23 @@
               </div>
 
               <div class="contact-section__item__block right">
-                <div class="contact-section__socials">
-                  <div class="contact-section__socials__item">
-                    <i class="mdi mdi-facebook"></i>
-                  </div>
-                  <div class="contact-section__socials__item">
-                    <i class="mdi mdi-instagram"></i>
-                  </div>
-                  <div class="contact-section__socials__item">
-                    <i class="mdi mdi-whatsapp"></i>
-                  </div>
-                </div>
+                <ul class="contact-section__socials">
+                  <li class="contact-section__socials__item">
+                    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="netdev в Facebook">
+                      <i class="mdi mdi-facebook" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                  <li class="contact-section__socials__item">
+                    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="netdev в Instagram">
+                      <i class="mdi mdi-instagram" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                  <li class="contact-section__socials__item">
+                    <a href="https://wa.me/77273231333" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
+                      <i class="mdi mdi-whatsapp" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -714,46 +730,46 @@
         <div class="container">
           <div class="section form-section">
             <div class="form-section__content">
-              <h2 class="section__title form-section__content__title">
+              <h2 class="section__title form-section__content__title" data-reveal>
                 закажите проект любой <span>сложности</span>
               </h2>
 
-              <p class="section__text">
+              <p class="section__text" data-reveal>
                 Закажите проект любой сложности и получите год технической
-                поддержки. Напишите нам, и мы обязательно свяжемся с вами в
-                течение 14 минут.
+                поддержки. Напишите нам, и мы свяжемся с вами в течение 14 минут.
               </p>
             </div>
 
-            <div class="form-section__form__wrapper">
-              <form class="form-section__form">
+            <div class="form-section__form__wrapper" data-reveal>
+              <form class="form-section__form" data-request-form novalidate>
                 <div class="form-section__form__input">
                   <label for="name">Ваше имя</label>
-
-                  <input id="name" type="text" />
+                  <input id="name" name="name" type="text" autocomplete="name" required aria-required="true" aria-describedby="name-error" />
+                  <span class="form-error" id="name-error" data-error-for="name"></span>
                 </div>
 
                 <div class="form-section__form__input">
-                  <label for="email">Ваше e-mail</label>
-
-                  <input id="email" type="email" />
+                  <label for="email">Ваш e-mail</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required aria-required="true" aria-describedby="email-error" />
+                  <span class="form-error" id="email-error" data-error-for="email"></span>
                 </div>
 
                 <div class="form-section__form__input">
                   <label for="message">Ваше сообщение</label>
-
-                  <textarea id="message" type="text"></textarea>
+                  <textarea id="message" name="message" required aria-required="true" aria-describedby="message-error"></textarea>
+                  <span class="form-error" id="message-error" data-error-for="message"></span>
                 </div>
 
                 <p class="form-section__form__text">
-                  Мы не продаем базы и не любим СПАМ так же, как и вы. Можете
-                  быть уверены, что ваши контакты находятся в полной
-                  безопасности.
+                  Мы не продаем базы и не любим СПАМ так же, как и вы. Ваши
+                  контакты в полной безопасности.
                 </p>
 
-                <button class="form-section__form__button">
+                <button class="form-section__form__button" type="submit">
                   Отправить сообщение
                 </button>
+
+                <p class="form-status" role="status" aria-live="polite"></p>
               </form>
             </div>
           </div>
@@ -764,21 +780,18 @@
     <footer class="footer__wrapper">
       <div class="container">
         <div class="footer">
-          <nav class="footer__nav__wrapper">
+          <nav class="footer__nav__wrapper" aria-label="Навигация в подвале">
             <div class="footer__logo">
-              <img src="assets/images/index/logo.svg" alt="" />
+              <img src="assets/images/index/logo.svg" alt="netdev" />
             </div>
 
             <ul class="footer__nav">
-              <li class="footer__nav__item"><a href="#">Главная</a></li>
-
-              <li class="footer__nav__item"><a href="#">Услуги</a></li>
-
-              <li class="footer__nav__item"><a href="#">Портфолио</a></li>
-
-              <li class="footer__nav__item"><a href="#">Отзывы</a></li>
-
-              <li class="footer__nav__item"><a href="#">Контакты</a></li>
+              <li class="footer__nav__item"><a href="#top">Главная</a></li>
+              <li class="footer__nav__item"><a href="#services">Услуги</a></li>
+              <li class="footer__nav__item"><a href="#clients">Клиенты</a></li>
+              <li class="footer__nav__item"><a href="#reviews">Отзывы</a></li>
+              <li class="footer__nav__item"><a href="#pricing">Стоимость</a></li>
+              <li class="footer__nav__item"><a href="#contacts">Контакты</a></li>
             </ul>
           </nav>
 
@@ -791,12 +804,8 @@
             </div>
 
             <div class="footer__contacts__item">
-              <p>
-                Отдел продаж <a href="tel:7 (727) 3231333">7 (727) 3231333</a>
-              </p>
-              <p>
-                Тех поддержка <a href="tel:7 (727) 3231300">7 (727) 3231300</a>
-              </p>
+              <p>Отдел продаж <a href="tel:+77273231333">+7 (727) 323 13 33</a></p>
+              <p>Тех поддержка <a href="tel:+77273231300">+7 (727) 323 13 00</a></p>
             </div>
 
             <div class="footer__contacts__item">
@@ -807,9 +816,58 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="footer__bottom__text"><a href="/">NETDEV</a> © 2022</p>
+        <p class="footer__bottom__text">
+          <a href="#top">netdev</a> &copy; <span id="year">2026</span>
+        </p>
       </div>
     </footer>
+
+    <div class="modal" data-modal hidden>
+      <div class="modal__overlay" data-modal-close></div>
+      <div
+        class="modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <button class="modal__close" type="button" aria-label="Закрыть" data-modal-close>
+          <i class="mdi mdi-close" aria-hidden="true"></i>
+        </button>
+
+        <div class="modal__body">
+          <h2 class="modal__title" id="modal-title">Оставить заявку</h2>
+          <p class="modal__subtitle">
+            Расскажите о проекте - вернемся с ответом в течение 14 минут.
+          </p>
+
+          <form class="modal__form form-section__form" data-request-form novalidate>
+            <div class="form-section__form__input">
+              <label for="m-name">Ваше имя</label>
+              <input id="m-name" name="name" type="text" autocomplete="name" required aria-required="true" aria-describedby="m-name-error" />
+              <span class="form-error" id="m-name-error" data-error-for="m-name"></span>
+            </div>
+
+            <div class="form-section__form__input">
+              <label for="m-email">Ваш e-mail</label>
+              <input id="m-email" name="email" type="email" autocomplete="email" required aria-required="true" aria-describedby="m-email-error" />
+              <span class="form-error" id="m-email-error" data-error-for="m-email"></span>
+            </div>
+
+            <div class="form-section__form__input">
+              <label for="m-message">Ваше сообщение</label>
+              <textarea id="m-message" name="message" required aria-required="true" aria-describedby="m-message-error"></textarea>
+              <span class="form-error" id="m-message-error" data-error-for="m-message"></span>
+            </div>
+
+            <button class="form-section__form__button" type="submit">
+              Отправить заявку
+            </button>
+
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
@@ -817,88 +875,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script>
-      function initSlider(sliderClass) {
-        const sliderElement = document.querySelector(sliderClass);
-        const totalItemCount = Array.from(
-          sliderElement.querySelectorAll(".splide__slide")
-        ).length;
-
-        function handlePagination(index) {
-          const paginationWrapper = sliderElement.querySelector(
-            ".slider__pagination"
-          );
-
-          const current = paginationWrapper.querySelector(".current");
-          const total = paginationWrapper.querySelector(".total");
-
-          current.textContent = index + 1;
-          total.textContent = totalItemCount;
-        }
-
-        const splide = new Splide(sliderClass, {
-          arrows: {
-            prev: document.querySelector(".splide__arrow--prev"),
-            next: document.querySelector(".splide__arrow--next"),
-          },
-          gap: 10,
-          pagination: false,
-          autoplay: true,
-          interval: 3000,
-          rewind: true,
-        });
-
-        splide.on("mounted", () => {
-          handlePagination(0);
-        });
-
-        splide.on("move", (index) => {
-          handlePagination(index);
-        });
-        splide.mount();
-      }
-
-      function initSliders() {
-        const sliders = [".landing-section__slider", ".talk-section__slider"];
-        sliders.map((e) => initSlider(e));
-      }
-
-      function initAccordion() {
-        const accordionItems = document.querySelectorAll(
-          ".services-section__list__item__title"
-        );
-
-        for (const item of accordionItems) {
-          const observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  item.parentElement.classList.add("is-active");
-                }
-              });
-            },
-            {
-              rootMargin: "250px 0px -150px 0px",
-            }
-          );
-
-          observer.observe(item);
-
-          item.addEventListener("click", function (event) {
-            event.preventDefault();
-            item.parentElement.classList.toggle("is-active");
-          });
-        }
-      }
-
-      function init() {
-        initSliders();
-        initAccordion();
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        init();
-      });
-    </script>
+    <script src="./assets/js/main.js" defer></script>
   </body>
 </html>

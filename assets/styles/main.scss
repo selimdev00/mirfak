@@ -5,13 +5,18 @@
 @import "base/fonts";
 @import "base/mixins";
 @import "base/layout";
+@import "base/a11y";
 
 /* COMPONENTS */
 @import "components/header";
 @import "components/footer";
 @import "components/slider";
+@import "components/modal";
 
 /* PAGES */
 @import "pages/index";
-@import "pages/portfolio-default";
-@import "pages/portfolio-main";
+@import "pages/clients";
+@import "pages/pricing";
+
+/* RESPONSIVE (overrides last) */
+@import "base/responsive";

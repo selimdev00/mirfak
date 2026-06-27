@@ -1,0 +1,101 @@
+.pricing-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: stretch;
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__lead {
+    max-width: 640px;
+    margin-bottom: 60px;
+    color: #55566a;
+  }
+}
+
+.pricing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 36px 32px;
+  border: 1px solid #e3e3ec;
+  border-radius: 16px;
+  background: #fff;
+  transition: transform 0.35s var(--ease-out-expo),
+    box-shadow 0.35s var(--ease-out-expo),
+    border-color 0.35s var(--ease-out-expo);
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 60px rgba(0, 0, 160, 0.12);
+    border-color: var(--theme-primary-color);
+  }
+
+  &--featured {
+    background: var(--theme-primary-color);
+    border-color: var(--theme-primary-color);
+    color: #fff;
+
+    .pricing-card__price,
+    .pricing-card__term {
+      color: #fff;
+    }
+
+    .pricing-card__list li {
+      color: rgba(255, 255, 255, 0.92);
+
+      &::before {
+        background-color: #fff;
+      }
+    }
+
+    .pricing-card__button {
+      background: #fff;
+      color: var(--theme-primary-color);
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: #ffd166;
+    color: #0b0b20;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    font-family: "PT-Root-UI", sans-serif;
+  }
+
+  &__name {
+    font-size: clamp(1.25rem, 0.9rem + 1.4vw, 1.625rem);
+  }
+
+  &__price {
+    font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2rem);
+    font-weight: bold;
+    color: var(--theme-primary-color);
+  }
+
+  &__term {
+    color: #6a6b7e;
+    margin-bottom: 6px;
+  }
+
+  &__list {
+    flex: 1;
+    margin-bottom: 12px;
+
+    li {
+      font-size: clamp(0.875rem, 0.7rem + 0.5vw, 1.0625rem);
+    }
+  }
+
+  &__button {
+    width: 100%;
+  }
+}

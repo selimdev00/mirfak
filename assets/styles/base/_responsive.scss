@@ -1,0 +1,258 @@
+/* ============ RESPONSIVE ============ */
+
+/* overflow + shrink guards */
+html,
+body {
+  overflow-x: hidden;
+}
+
+.section,
+.header,
+.landing-section,
+.services-section,
+.transparency-section,
+.talk-section,
+.contact-section__item,
+.form-section,
+.pricing-section,
+.clients-section__stats,
+.clients-section__logos,
+.portfolio-section__grid {
+  min-width: 0;
+
+  > * {
+    min-width: 0;
+  }
+}
+
+.section__title {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* ===== <= 1024px ===== */
+@media (max-width: 1024px) {
+  .talk-section {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .talk-section__sponsor-image,
+  .talk-section__content__document {
+    width: 100%;
+    max-width: 270px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .talk-section__content__author {
+    align-items: center;
+  }
+
+  .talk-section__slider__arrows {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .pricing-section {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Mobile dropdown only exists below the burger breakpoint */
+@media (min-width: 961px) {
+  .mobile-nav {
+    display: none !important;
+  }
+}
+
+/* ===== <= 960px : burger nav ===== */
+@media (max-width: 960px) {
+  .header {
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+  }
+
+  .header__nav__wrapper,
+  .header__panel {
+    display: none;
+  }
+
+  .header__burger {
+    display: flex;
+  }
+
+  body.is-nav-open {
+    overflow: hidden;
+  }
+}
+
+/* ===== <= 768px ===== */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 72px;
+  }
+
+  .section__wrapper {
+    padding: 56px 0;
+  }
+
+  .portfolio-section__wrapper {
+    padding-bottom: 72px;
+  }
+
+  /* Hero */
+  .landing-section {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .landing-section__image {
+    height: auto;
+    max-height: 320px;
+  }
+
+  .landing-section__wrapper {
+    padding-top: calc(var(--header-height) + 1.5rem);
+  }
+
+  /* Services */
+  .services-section {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .services-section__content {
+    position: static;
+  }
+
+  .services-section__button {
+    width: 160px;
+    height: 160px;
+  }
+
+  /* Clients */
+  .clients-section__stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .clients-section__logos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .clients-section__title {
+    margin-bottom: 40px;
+  }
+
+  /* Transparency */
+  .transparency-section {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .transparency-section__title {
+    margin-bottom: 40px;
+  }
+
+  /* Portfolio */
+  .portfolio-section__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .portfolio-section__grid__item:nth-child(even) {
+    top: 0;
+  }
+
+  .portfolio-section__grid__item__image {
+    height: auto;
+    aspect-ratio: 16 / 11;
+  }
+
+  /* Contacts */
+  .contact-section {
+    gap: 48px;
+  }
+
+  .contact-section__item {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .contact-section__item__block.right {
+    text-align: left;
+  }
+
+  .contact-section__socials {
+    justify-content: flex-start;
+  }
+
+  .contact-section__item__text {
+    width: 100%;
+  }
+
+  /* Form */
+  .form-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .form-section__content {
+    position: static;
+  }
+
+  .form-section__form__input input,
+  .form-section__form__input textarea {
+    font-size: 16px; /* prevents iOS zoom on focus */
+  }
+
+  /* Footer */
+  .footer__nav__wrapper {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer__nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .footer__contacts {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .footer__contacts__item:last-child {
+    text-align: left;
+  }
+
+  .modal__dialog {
+    padding: 32px 24px;
+  }
+}
+
+/* ===== <= 480px ===== */
+@media (max-width: 480px) {
+  .clients-section__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .clients-section__logos {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-section__slider__arrows {
+    gap: 16px;
+  }
+}
